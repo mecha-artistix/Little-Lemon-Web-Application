@@ -7,6 +7,17 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
 
+
+
+def home(request):
+    return render(request, 'index.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+
+
+
 class MenuItemsView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
